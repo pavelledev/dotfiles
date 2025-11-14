@@ -1,0 +1,213 @@
+################
+### MONITORS ###
+################
+
+monitor = DP-1 , 1920x1080@165, 1920x0, 1
+monitor = DP-2 , 1920x1080@165, 0x0, 1
+
+#############################
+### ENVIRONMENT VARIABLES ###
+#############################
+
+# Nvidia stuff do not touch!
+env = LIBVA_DRIVER_NAME,nvidia
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+env = __GL_GSYNC_ALLOWED,1
+
+# Keyboard
+env = QT_IM_MODULE,fcitx5
+env = XMODIFIERS,@im=fcitx5
+env = INPUT_METHOD,fcitx5
+env = SDL_IM_MODULE,fcitx5
+
+# Electron
+env = ELECTRON_OZONE_PLATFORM_HINT,auto
+
+# Hyprland
+env = GTK_THEME,Nordic
+env = XCURSOR_SIZE,24
+env = HYPRCURSOR_SIZE,24
+
+#################
+### AUTOSTART ###
+#################
+
+exec-once = swww-daemon
+exec-once = fcitx5
+exec-once = dunst
+exec-once = waybar
+
+#####################
+### LOOK AND FEEL ###
+#####################
+
+xwayland {
+  force_zero_scaling = true
+}
+
+general {
+    gaps_in = 5
+    gaps_out = 10
+
+    border_size = 2
+
+    col.active_border = rgb(434C5E)
+    col.inactive_border = rgb(2e3440)
+
+    resize_on_border = false
+
+    # Please see https://wiki.hypr.land/Configuring/Tearing/ before you turn this on
+    allow_tearing = false
+
+    layout = dwindle
+}
+
+# https://wiki.hypr.land/Configuring/Variables/#decoration
+decoration {
+    rounding = 15
+    rounding_power = 2
+
+    # Change transparency of focused and unfocused windows
+    active_opacity = 1.0
+    inactive_opacity = 1.0
+
+    shadow {
+        enabled = true
+        range = 10
+        render_power = 3
+        color = rgba(1a1a1aee)
+    }
+}
+
+# https://wiki.hypr.land/Configuring/Variables/#animations
+animations {
+    enabled = true
+
+    # Default curves, see https://wiki.hypr.land/Configuring/Animations/#curves
+    #        NAME,           X0,   Y0,   X1,   Y1
+    bezier = easeOutQuint,   0.23, 1,    0.32, 1
+    bezier = easeInOutCubic, 0.65, 0.05, 0.36, 1
+    bezier = linear,         0,    0,    1,    1
+    bezier = almostLinear,   0.5,  0.5,  0.75, 1
+    bezier = quick,          0.15, 0,    0.1,  1
+
+    # Default animations, see https://wiki.hypr.land/Configuring/Animations/
+    #           NAME,          ONOFF, SPEED, CURVE,        [STYLE]
+    animation = global,        1,     10,    default
+    animation = border,        1,     5.39,  easeOutQuint
+    animation = windows,       1,     4.79,  easeOutQuint
+    animation = windowsIn,     1,     4.1,   easeOutQuint, popin 87%
+    animation = windowsOut,    1,     1.49,  linear,       popin 87%
+    animation = fadeIn,        1,     1.73,  almostLinear
+    animation = fadeOut,       1,     1.46,  almostLinear
+    animation = fade,          1,     3.03,  quick
+    animation = layers,        1,     3.81,  easeOutQuint
+    animation = layersIn,      1,     4,     easeOutQuint, fade
+    animation = layersOut,     1,     1.5,   linear,       fade
+    animation = fadeLayersIn,  1,     1.79,  almostLinear
+    animation = fadeLayersOut, 1,     1.39,  almostLinear
+    animation = workspaces,    1,     1.94,  almostLinear, fade
+    animation = workspacesIn,  1,     1.21,  almostLinear, fade
+    animation = workspacesOut, 1,     1.94,  almostLinear, fade
+    animation = zoomFactor,    1,     7,     quick
+}
+
+dwindle {
+    pseudotile = true
+    preserve_split = true
+}
+
+misc {
+    disable_hyprland_logo = true
+    font_family = Cantarell
+}
+
+#############
+### INPUT ###
+#############
+
+# https://wiki.hypr.land/Configuring/Variables/#input
+input {
+    kb_layout = us
+    follow_mouse = 1
+    sensitivity = 0
+}
+
+###################
+### KEYBINDINGS ###
+###################
+$mainMod = SUPER
+
+# Start a terminal
+bind = $mainMod, Return, exec, kitty
+
+# Kill focused window
+bind = $mainMod Shift, Q, killactive
+
+# Start app launcher
+bind = $mainMod, D, exec, rofi -show drun
+
+# Switch input method
+#bind = Alt, Z, exec, fcitx5-remote -t
+
+# Toggle floating
+bind = $mainMod SHIFT, Space, togglefloating
+
+# Toggle fullscreen
+bind= $mainMod SHIFT, F, fullscreen
+
+# Toggle layout
+bind = $mainMod, P, pseudo
+bind = $mainMod, J, togglesplit
+
+# Move focus with mainMod + arrow keys
+bind = $mainMod, LEFT, movefocus, l
+bind = $mainMod, RIGHT, movefocus, r
+bind = $mainMod, UP, movefocus, u
+bind = $mainMod, DOWN, movefocus, d
+
+# Switch workspaces with mainMod + [0-9]
+bind = $mainMod, 1, workspace, 1
+bind = $mainMod, 2, workspace, 2
+bind = $mainMod, 3, workspace, 3
+bind = $mainMod, 4, workspace, 4
+bind = $mainMod, 5, workspace, 5
+bind = $mainMod, 6, workspace, 6
+bind = $mainMod, 7, workspace, 7
+bind = $mainMod, 8, workspace, 8
+bind = $mainMod, 9, workspace, 9
+bind = $mainMod, 0, workspace, 10
+
+# Move active window to a workspace with mainMod + SHIFT + [0-9]
+bind = $mainMod SHIFT, 1, movetoworkspacesilent, 1
+bind = $mainMod SHIFT, 2, movetoworkspacesilent, 2
+bind = $mainMod SHIFT, 3, movetoworkspacesilent, 3
+bind = $mainMod SHIFT, 4, movetoworkspacesilent, 4
+bind = $mainMod SHIFT, 5, movetoworkspacesilent, 5
+bind = $mainMod SHIFT, 6, movetoworkspacesilent, 6
+bind = $mainMod SHIFT, 7, movetoworkspacesilent, 7
+bind = $mainMod SHIFT, 8, movetoworkspacesilent, 8
+bind = $mainMod SHIFT, 9, movetoworkspacesilent, 9
+bind = $mainMod SHIFT, 0, movetoworkspacesilent, 10
+
+# Move active workspace to next monitor
+bind = $mainMod ALT, LEFT, movecurrentworkspacetomonitor, l
+bind = $mainMod ALT, RIGHT, movecurrentworkspacetomonitor, r
+
+# Move/resize windows with mainMod + LMB/RMB and dragging
+# bindm = $mainMod, mouse:274, movewindow
+# bindm = $mainMod, mouse:273, resizewindow
+
+##############################
+### WINDOWS AND WORKSPACES ###
+##############################
+
+# Silent steam
+windowrule = tile, class:(steam)
+windowrule = workspace 9 silent, class:*
+
+# Ignore maximize requests from apps. You'll probably like this.
+windowrule = suppressevent maximize, class:.*
+
+# Fix some dragging issues with XWayland
+windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
