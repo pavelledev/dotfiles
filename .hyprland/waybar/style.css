@@ -1,0 +1,114 @@
+* {
+	font-family: Cantarell;
+    font-weight: bold;
+	font-size: 16px;
+	min-height: 24px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+#workspaces {
+    font-family: "Font Awesome 7 Free Solid";
+	margin-top: 6px;
+	margin-bottom: 2px;
+	margin-left: 2px;
+	margin-right: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 26px;
+	background: #2e3440;
+	transition: none;
+    box-shadow: 0px 0px 2px 1px #101010;
+}
+
+#workspaces button {
+	transition: none;
+	color: #4c566a;
+	background: #2E3440;
+}
+
+#workspaces button.visible{
+	transition: none;
+    color: #4c566a;
+	background: #2E3440;
+    border-bottom: 2px solid #4c566a; 
+}
+
+#workspaces button.active {
+	transition: none;
+	color: #d8dee9;
+	background: #2E3440;
+    border-bottom: 2px solid #d8dee9; 
+}
+
+#custom-weather {
+	margin-top: 6px;
+	margin-bottom: 2px;
+	margin-left: 12px;
+	margin-right: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 26px;
+	transition: none;
+	color: #d8dee9;
+	background: #2e3440;
+    box-shadow: 0px 0px 2px 1px #101010;
+}
+
+#pulseaudio {
+	margin-top: 6px;
+	margin-bottom: 2px;
+	margin-left: 4px;
+	margin-right: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 26px;
+	transition: none;
+	color: #d8dee9;
+	background: #2e3440;
+    box-shadow: 0px 0px 2px 1px #101010;
+}
+
+#pulseaudio.muted {
+	margin-top: 6px;
+	margin-bottom: 2px;
+	margin-left: 4px;
+	margin-right: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 26px;
+	transition: none;
+	color: #d8dee9;
+	background: #bf616a;
+    box-shadow: 0px 0px 2px 1px #101010;
+}
+
+#clock {
+	margin-top: 6px;
+	margin-bottom: 2px;
+	margin-left: 4px;
+	margin-right: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 26px;
+	transition: none;
+	color: #d8dee9;
+	background: #2e3440;
+    box-shadow: 0px 0px 2px 1px #101010;
+}
+
+#tray {
+	margin-top: 6px;
+	margin-bottom: 2px;
+	margin-left: 4px;
+	margin-right: 12px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 26px;
+	transition: none;
+	color: #d8dee9;
+	background: #2e3440;
+    box-shadow: 0px 0px 2px 1px #101010;
+}
