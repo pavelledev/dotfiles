@@ -3,7 +3,8 @@
     "output": "DP-1",
     "height": 40,
     "modules-left": [
-        "hyprland/window"
+        "hyprland/window",
+        "custom/cava"
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -25,7 +26,11 @@
     },
     "hyprland/window": {
         "format": ">  {class}",
-        "separate-outputs": true
+        "separate-outputs": false
+    },
+    "custom/cava": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/cava.sh"
     }
 },
 {
