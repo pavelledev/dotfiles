@@ -9,6 +9,20 @@ window#waybar {
 	background: transparent;
 }
 
+#window {
+	margin-top: 6px;
+	margin-bottom: 2px;
+	margin-left: 12px;
+	margin-right: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 26px;
+	transition: none;
+	color: #d8dee9;
+	background: #2e3440;
+    box-shadow: 0px 0px 2px 1px #101010;
+}
+
 #workspaces {
     font-family: "Font Awesome 7 Free Solid";
 	margin-top: 6px;
@@ -41,20 +55,6 @@ window#waybar {
 	color: #d8dee9;
 	background: #2E3440;
     border-bottom: 2px solid #d8dee9; 
-}
-
-#custom-weather {
-	margin-top: 6px;
-	margin-bottom: 2px;
-	margin-left: 12px;
-	margin-right: 4px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 26px;
-	transition: none;
-	color: #d8dee9;
-	background: #2e3440;
-    box-shadow: 0px 0px 2px 1px #101010;
 }
 
 #pulseaudio {
