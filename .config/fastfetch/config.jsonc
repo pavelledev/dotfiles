@@ -18,6 +18,7 @@
     {
       "type": "wm",
       "key": "WM",
+      "format": "{1}",
       "keyColor": "blue"
     },
     {
