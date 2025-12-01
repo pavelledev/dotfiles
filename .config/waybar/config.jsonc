@@ -74,26 +74,7 @@
     },
     "clock": {
         "format": "<span font='Font Awesome 7 Free Solid'></span> {:%R}",
-        "format-alt": "<span font='Font Awesome 7 Free Solid'></span> {:%A, %d %B %Y - %R}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-                    "mode"          : "year",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "right",
-                    "on-scroll"     : 1,
-                    "format": {
-                              "months":     "<span color='#a3be8c'><b>{}</b></span>",
-                              "days":       "<span color='#d8dee9'><b>{}</b></span>",
-                              "weeks":      "<span color='#88c0d0'><b>w{}</b></span>",
-                              "weekdays":   "<span color='#ebcb8b'><b>{}</b></span>",
-                              "today":      "<span color='#bf616a'><b>{}</b></span>"
-                              }
-                    },
-        "actions":  {
-                    "on-click-right": "mode",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
-                    }
+        "format-alt": "<span font='Font Awesome 7 Free Solid'></span> {:%A, %d %B %Y - %R}"
     },
     "tray": {
         "icon-size": 20,
