@@ -1,0 +1,97 @@
+// -*- mode: jsonc -*-
+[{
+    "output": "DP-1",
+    "height": 40,
+    "modules-left": [
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": ""
+        }
+    },
+    "hyprland/window": {
+        "format": ">  {class}",
+        "separate-outputs": true
+    }
+},
+{
+    "output": "DP-2",
+    "height": 40,
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "clock",
+        "tray"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": ""
+        }
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format": "<span font='Font Awesome 7 Free Solid'>{icon}</span> {volume}%",
+        "format-muted": "<span font='Font Awesome 7 Free Solid'></span>",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    },
+    "hyprland/window": {
+        "format": ">  {class}",
+        "separate-outputs": true
+    },
+    "clock": {
+        "format": "<span font='Font Awesome 7 Free Solid'></span> {:%R}",
+        "format-alt": "<span font='Font Awesome 7 Free Solid'></span> {:%A, %d %B %Y - %R}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#a3be8c'><b>{}</b></span>",
+                              "days":       "<span color='#d8dee9'><b>{}</b></span>",
+                              "weeks":      "<span color='#88c0d0'><b>w{}</b></span>",
+                              "weekdays":   "<span color='#ebcb8b'><b>{}</b></span>",
+                              "today":      "<span color='#bf616a'><b>{}</b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 5
+    }
+}]
