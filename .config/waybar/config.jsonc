@@ -25,7 +25,7 @@
         }
     },
     "hyprland/window": {
-        "format": ">  {class}",
+        "format": ">  {initialClass}",
         "separate-outputs": false
     },
     "custom/cava": {
