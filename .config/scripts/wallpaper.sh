@@ -1,10 +1,6 @@
 #!/bin/bash
 
-# Folder containing wallpapers
-WALLPAPER_DIR="$HOME/Images/wallpapers"
+magick convert -crop 50%x100% $HOME/Images/wallpaper.png $HOME/Images/tmp/output.png
 
-# Pick a random image
-IMAGE=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
-
-# Apply wallpaper
-swww img "$IMAGE" --transition-type random --transition-fps 60
+swww img -o "DP-1" $HOME/Images/tmp/output-0.png
+swww img -o "DP-2" $HOME/Images/tmp/output-1.png
